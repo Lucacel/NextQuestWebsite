@@ -1,20 +1,21 @@
 import { Terminal, Folder, ExternalLink } from "lucide-react"
 import { TerminalInput } from "../components/terminal-input"
-import { SetupInstructions } from "../components/setup-instructions"
-import { validateEnv } from "../lib/env"
+// Setup instructions commented out for now
+// import { SetupInstructions } from "../components/setup-instructions"
+// import { validateEnv } from "../lib/env"
 
 export default function CVPage() {
-  // Check if SendGrid is configured
-  const isEmailConfigured = validateEnv()
+  // Email configuration check disabled for now
+  // const isEmailConfigured = validateEnv()
 
   return (
     <div className="min-h-screen bg-black text-green-400 font-mono">
-      {/* Setup Instructions - Only show if email not configured */}
-      {!isEmailConfigured && (
+      {/* Setup Instructions - Commented out for now */}
+      {/* {!isEmailConfigured && (
         <div className="bg-white p-4">
           <SetupInstructions />
         </div>
-      )}
+      )} */}
 
       <div className="p-4">
         <div className="max-w-5xl mx-auto">

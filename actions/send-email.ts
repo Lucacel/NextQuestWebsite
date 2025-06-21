@@ -1,11 +1,12 @@
 "use server"
 
-import sgMail from "@sendgrid/mail"
+// SendGrid integration commented out for now
+// import sgMail from "@sendgrid/mail"
 
-// Initialize SendGrid with API key
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-}
+// Initialize SendGrid with API key (commented out)
+// if (process.env.SENDGRID_API_KEY) {
+//   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+// }
 
 export async function sendEmail(prevState: any, formData: FormData) {
   try {
@@ -28,83 +29,27 @@ export async function sendEmail(prevState: any, formData: FormData) {
       }
     }
 
-    // Check if SendGrid is configured
-    if (!process.env.SENDGRID_API_KEY) {
-      console.log("SendGrid not configured, logging message:", {
-        from: senderEmail,
-        message: message,
-        timestamp: new Date().toISOString(),
-      })
-      return {
-        success: true,
-        message: "Message logged successfully! (SendGrid not configured)",
-      }
-    }
+    // Simulate email sending delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    // Prepare email content
-    const emailContent = {
-      to: "razvanlucacel@gmail.com", // Your email
-      from: process.env.SENDGRID_FROM_EMAIL || "noreply@yourdomain.com", // Must be verified in SendGrid
-      replyTo: senderEmail !== "anonymous@visitor.com" ? senderEmail : undefined,
-      subject: `New Contact from CV Terminal - ${new Date().toLocaleDateString()}`,
-      html: `
-        <div style="font-family: 'Courier New', monospace; background-color: #000; color: #00ff00; padding: 20px; border-radius: 8px;">
-          <h2 style="color: #00ffff; margin-bottom: 20px;">📧 New Terminal Message</h2>
-          
-          <div style="background-color: #1a1a1a; padding: 15px; border-left: 4px solid #00ff00; margin: 15px 0;">
-            <p style="color: #ffff00; margin: 0 0 10px 0;"><strong>From:</strong> ${senderEmail}</p>
-            <p style="color: #ffff00; margin: 0 0 10px 0;"><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
-            <p style="color: #ffff00; margin: 0 0 15px 0;"><strong>Source:</strong> CV Terminal Interface</p>
-          </div>
-
-          <div style="background-color: #1a1a1a; padding: 15px; border-left: 4px solid #00ffff; margin: 15px 0;">
-            <p style="color: #00ffff; margin: 0 0 10px 0;"><strong>Message:</strong></p>
-            <p style="color: #ffffff; margin: 0; white-space: pre-wrap; line-height: 1.4;">${message}</p>
-          </div>
-
-          <div style="margin-top: 20px; padding: 10px; background-color: #1a1a1a; border-radius: 4px;">
-            <p style="color: #888; font-size: 12px; margin: 0;">
-              This message was sent through your interactive CV terminal at ${new Date().toLocaleString()}
-            </p>
-          </div>
-        </div>
-      `,
-      text: `
-New Contact from CV Terminal
-
-From: ${senderEmail}
-Timestamp: ${new Date().toLocaleString()}
-Source: CV Terminal Interface
-
-Message:
-${message}
-
----
-This message was sent through your interactive CV terminal.
-      `,
-    }
-
-    // Send the email
-    await sgMail.send(emailContent)
-
-    return {
-      success: true,
-      message: `Message sent successfully! Razvan will get back to you soon.`,
-    }
-  } catch (error) {
-    console.error("Error sending email:", error)
-
-    // Log the message as fallback
-    console.log("Fallback logging message:", {
-      from: formData?.get("senderEmail") || "unknown",
-      message: formData?.get("message") || "unknown",
+    // Log the message instead of sending email (for now)
+    console.log("📧 Terminal Contact Message:", {
+      from: senderEmail,
+      message: message,
       timestamp: new Date().toISOString(),
-      error: error instanceof Error ? error.message : "Unknown error",
+      source: "CV Terminal Interface",
     })
 
     return {
+      success: true,
+      message: `Message logged successfully! Email sending is currently disabled.`,
+    }
+  } catch (error) {
+    console.error("Error processing message:", error)
+
+    return {
       success: false,
-      message: "Failed to send message. Please try again or contact directly via email.",
+      message: "Failed to process message. Please try again.",
     }
   }
 }
