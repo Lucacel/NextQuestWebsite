@@ -4,6 +4,11 @@ import { TerminalInput } from "../components/terminal-input"
 // import { SetupInstructions } from "../components/setup-instructions"
 // import { validateEnv } from "../lib/env"
 
+export const metadata = {
+  title: "Next Quest Studio",
+  description: "Lucacel Razvan - Senior Full Stack Developer",
+}
+
 export default function CVPage() {
   // Email configuration check disabled for now
   // const isEmailConfigured = validateEnv()
@@ -37,18 +42,18 @@ export default function CVPage() {
             {/* ASCII Art Header */}
             <div className="text-cyan-400 text-sm leading-tight mb-6">
               <pre>{`
-╔══════════════════════════════════════════════════════════════════════════════╗
-║  ██▓     █    ██  ▄████▄   ▄▄▄       ▄████▄  ▓█████  ██▓                   ║
-║ ▓██▒     ██  ▓██▒▒██▀ ▀█  ▒████▄    ▒██▀ ▀█  ▓█   ▀ ▓██▒                   ║
-║ ▒██░    ▓██  ▒██░▒▓█    ▄ ▒██  ▀█▄  ▒▓█    ▄ ▒███   ▒██░                   ║
-║ ▒██░    ▓▓█  ░██░▒▓▓▄ ▄██▒░██▄▄▄▄██ ▒▓▓▄ ▄██▒▒▓█  ▄ ▒██░                   ║
-║ ░██████▒▒▒█████▓ ▒ ▓███▀ ░ ▓█   ▓██▒▒ ▓███▀ ░░▒████▒░██████▒               ║
-║ ░ ▒░▓  ░░▒▓▒ ▒ ▒ ░ ░▒ ▒  ░ ▒▒   ▓▒█░░ ░▒ ▒  ░░░ ▒░ ░░ ▒░▓  ░               ║
-║ ░ ░ ▒  ░░░▒░ ░ ░   ░  ▒     ▒   ▒▒ ░  ░  ▒    ░ ░  ░░ ░ ▒  ░               ║
-║   ░ ░    ░░░ ░ ░ ░          ░   ▒   ░           ░     ░ ░                   ║
-║     ░  ░   ░     ░ ░            ░  ░░ ░         ░  ░    ░  ░                ║
-║                  ░                  ░                                       ║
-╚══════════════════════════════════════════════════════════════════════════════╝`}</pre>
+╔═════════════════════════════════════════════════════════════════════════════════╗
+║ ███▄    █ ▓█████ ▒██   ██▒▄▄▄█████▓    █████   █    ██ ▓█████   ██████ ▄▄▄█████▓║
+║ ██ ▀█   █ ▓█   ▀ ▒▒ █ █ ▒░▓  ██▒ ▓▒  ▒██▓  ██▒ ██  ▓██▒▓█   ▀ ▒██    ▒ ▓  ██▒ ▓▒║
+║▓██  ▀█ ██▒▒███   ░░  █   ░▒ ▓██░ ▒░  ▒██▒  ██░▓██  ▒██░▒███   ░ ▓██▄   ▒ ▓██░ ▒░║
+║▓██▒  ▐▌██▒▒▓█  ▄  ░ █ █ ▒ ░ ▓██▓ ░   ░██  █▀ ░▓▓█  ░██░▒▓█  ▄   ▒   ██▒░ ▓██▓ ░ ║
+║▒██░   ▓██░░▒████▒▒██▒ ▒██▒  ▒██▒ ░   ░▒███▒█▄ ▒▒█████▓ ░▒████▒▒██████▒▒  ▒██▒ ░ ║
+║░ ▒░   ▒ ▒ ░░ ▒░ ░▒▒ ░ ░▓ ░  ▒ ░░     ░░ ▒▒░ ▒ ░▒▓▒ ▒ ▒ ░░ ▒░ ░▒ ▒▓▒ ▒ ░  ▒ ░░   ║
+║░ ░░   ░ ▒░ ░ ░  ░░░   ░▒ ░    ░       ░ ▒░  ░ ░░▒░ ░ ░  ░ ░  ░░ ░▒  ░ ░    ░    ║
+║   ░   ░ ░    ░    ░    ░    ░           ░   ░  ░░░ ░ ░    ░   ░  ░  ░    ░      ║
+║         ░    ░  ░ ░    ░                  ░      ░        ░  ░      ░           ║
+║                                                                                 ║
+╚═════════════════════════════════════════════════════════════════════════════════╝`}</pre>
             </div>
 
             {/* Command Prompt Style Info */}
@@ -61,7 +66,8 @@ export default function CVPage() {
                 <span className="text-yellow-400">whoami</span>
               </div>
               <div className="ml-4 text-white">
-                <div className="text-2xl font-bold mb-2">LUCACEL RAZVAN</div>
+                <div className="text-3xl font-bold mb-3">NEXT QUEST STUDIO</div>
+                <div className="text-lg text-gray-300 mb-1">Lucacel Razvan</div>
                 <div className="text-cyan-400 text-lg mb-4">Senior Full Stack Developer</div>
                 <div className="text-gray-300 max-w-3xl">
                   # Versatile programmer with 7+ years of experience across various industries # Specialized in mobile
