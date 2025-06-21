@@ -360,9 +360,9 @@ export default function CVPage() {
             </div>
 
             {/* Interactive Terminal Prompt */}
-            <div className="mt-8 pt-4 border-t border-gray-700">
-              <TerminalInput />
-            </div>
+            {/* <div className="mt-8 pt-4 border-t border-gray-700">
+              <TerminalInput /> 
+            </div>*/}
           </div>
         </div>
       </div>
