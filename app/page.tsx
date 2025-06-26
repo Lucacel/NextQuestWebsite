@@ -101,7 +101,7 @@ export default function CVPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-cyan-400">LINKEDIN:</span>
-                    <span className="text-white">linkedin.com/in/lucacel-razvan</span>
+                    <a href="www.linkedin.com/in/lucacel-razvan-2819a1149" className="text-white">linkedin.com/in/lucacel-razvan-2819a1149</a>
                   </div>
                 </div>
               </div>
