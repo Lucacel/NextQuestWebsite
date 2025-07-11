@@ -62,7 +62,7 @@ export function TerminalInput() {
 Email: razvanlucacel@gmail.com
 Phone: +40736505149
 Location: Cluj-Napoca, Romania
-LinkedIn: linkedin.com/in/lucacel-razvan`)
+LinkedIn: linkedin.com/in/lucacel-razvan-2819a1149`)
       return
     }
 
@@ -89,13 +89,16 @@ Type 'help' for available commands.`)
   if (state?.success) {
     return (
       <div className="space-y-2">
-        <div className="text-green-400 text-sm">✓ {state.message}</div>
-        <div className="flex items-center gap-2">
-          <span className="text-green-400">razvan@dev-machine</span>
+        <div className="text-green-400 text-xs sm:text-sm">✓ {state.message}</div>
+        <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
+          <span className="text-green-400 text-xs sm:text-sm">razvan@dev-machine</span>
           <span className="text-white">:</span>
           <span className="text-blue-400">~</span>
           <span className="text-white">$</span>
-          <button onClick={() => window.location.reload()} className="text-yellow-400 hover:text-yellow-300 underline">
+          <button
+            onClick={() => window.location.reload()}
+            className="text-yellow-400 hover:text-yellow-300 underline text-xs sm:text-sm"
+          >
             Send another message
           </button>
         </div>
@@ -106,13 +109,16 @@ Type 'help' for available commands.`)
   if (state && !state.success && state.message) {
     return (
       <div className="space-y-2">
-        <div className="text-red-400 text-sm">✗ {state.message}</div>
-        <div className="flex items-center gap-2">
-          <span className="text-green-400">razvan@dev-machine</span>
+        <div className="text-red-400 text-xs sm:text-sm">✗ {state.message}</div>
+        <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
+          <span className="text-green-400 text-xs sm:text-sm">razvan@dev-machine</span>
           <span className="text-white">:</span>
           <span className="text-blue-400">~</span>
           <span className="text-white">$</span>
-          <button onClick={() => window.location.reload()} className="text-yellow-400 hover:text-yellow-300 underline">
+          <button
+            onClick={() => window.location.reload()}
+            className="text-yellow-400 hover:text-yellow-300 underline text-xs sm:text-sm"
+          >
             Try again
           </button>
         </div>
@@ -124,14 +130,14 @@ Type 'help' for available commands.`)
     return (
       <div className="space-y-3">
         {showEmailInput && (
-          <div className="flex items-center gap-2">
-            <span className="text-cyan-400">Your email (optional):</span>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-cyan-400 text-xs sm:text-sm">Your email (optional):</span>
             <input
               ref={emailInputRef}
               type="email"
               value={senderEmail}
               onChange={(e) => setSenderEmail(e.target.value)}
-              className="bg-transparent border-none outline-none text-white flex-1"
+              className="bg-transparent border-none outline-none text-white flex-1 min-w-0 text-xs sm:text-sm"
               placeholder="your.email@example.com"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
@@ -150,13 +156,13 @@ Type 'help' for available commands.`)
 
         {!showEmailInput && (
           <div className="space-y-2">
-            <div className="text-cyan-400 text-sm">
+            <div className="text-cyan-400 text-xs sm:text-sm">
               Composing message to razvanlucacel@gmail.com...
               <br />
               <span className="text-gray-400">Press Ctrl+C to cancel, Enter to send</span>
             </div>
-            <form action={formAction} className="flex items-center gap-2">
-              <span className="text-green-400">message</span>
+            <form action={formAction} className="flex items-center gap-1 sm:gap-2 flex-wrap">
+              <span className="text-green-400 text-xs sm:text-sm">message</span>
               <span className="text-white">{">"}</span>
               <input
                 ref={inputRef}
@@ -164,7 +170,7 @@ Type 'help' for available commands.`)
                 name="message"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                className="bg-transparent border-none outline-none text-white flex-1"
+                className="bg-transparent border-none outline-none text-white flex-1 min-w-0 text-xs sm:text-sm"
                 placeholder="Type your message here..."
                 disabled={isPending}
                 onKeyDown={(e) => {
@@ -175,7 +181,7 @@ Type 'help' for available commands.`)
                 required
               />
               <input type="hidden" name="senderEmail" value={senderEmail} />
-              {isPending && <span className="text-yellow-400">Sending...</span>}
+              {isPending && <span className="text-yellow-400 text-xs sm:text-sm">Sending...</span>}
               <span className="text-white animate-pulse">_</span>
             </form>
           </div>
@@ -186,8 +192,8 @@ Type 'help' for available commands.`)
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex items-center gap-2">
-        <span className="text-green-400">razvan@dev-machine</span>
+      <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
+        <span className="text-green-400 text-xs sm:text-sm">razvan@dev-machine</span>
         <span className="text-white">:</span>
         <span className="text-blue-400">~</span>
         <span className="text-white">$</span>
@@ -196,7 +202,7 @@ Type 'help' for available commands.`)
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="bg-transparent border-none outline-none text-white flex-1"
+          className="bg-transparent border-none outline-none text-white flex-1 min-w-0 text-xs sm:text-sm"
           placeholder="Type 'help' for commands or 'email' to send a message..."
         />
         <span className="text-white animate-pulse">_</span>
