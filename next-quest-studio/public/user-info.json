@@ -1,0 +1,13 @@
+{
+  "name": "John Doe",
+  "title": "Full Stack Developer",
+  "bio": "Passionate developer with 5+ years of experience building modern web applications.",
+  "skills": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS"],
+  "contact": {
+    "email": "john@example.com",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "github": "https://github.com/johndoe"
+  },
+  "experience": "5+ years",
+  "location": "San Francisco, CA"
+}

@@ -1,64 +1,84 @@
-import Image from "next/image";
+import ExperienceSection from "./components/experienceSection";
+import HeaderSection from "./components/headerSection";
 
 export default function Home() {
+  const userInfo = {
+    name: "Lucacel Razvan",
+    title: "Sr. Full Stack Developer",
+    bio: `Hi, I'm a versatile programmer with 7+ years of experience across various industries. 
+    Specialized in mobile and web fullstack development. 
+    Adaptable, professional, delivering innovative solutions. I find myself creative and driven when working on projects that challenge me to think outside the box.
+    I consider myself a problem solver and a jack of all trades, always eager to learn new technologies or improve my skills.`,
+    interests: ["🎨 Painting", "🧗 Climbing", "🍳 Cooking", "🎮 Gaming"],
+    techStack: [
+      { icon: "/techstack/react-icon.svg", name: "React-Native" },
+      { icon: "/techstack/nextjs-icon.svg", name: "Next.js" },
+      { icon: "/techstack/vuejs-icon.svg", name: "Vue.js" },
+      { icon: "/techstack/typescript-icon.svg", name: "TypeScript" },
+      { icon: "/techstack/nestjs-icon.svg", name: "Nest.js" },
+      { icon: "/techstack/mongodb-icon.svg", name: "MongoDB" },
+      { icon: "/techstack/postgresql-icon.svg", name: "PostgreSQL" },
+    ],
+  };
+
+  const experiences = [
+    {
+      company: "Tapptitude",
+      startDate: "Apr 2024",
+      endDate: "Oct 2025",
+      title: "Senior Full Stack Developer",
+      description: `● Decupled important services from a monolithic architecture in order to prevent bottlenecks and improve scalability.
+        ● Implemented a feature for users to create workflows similar to Jira actions with a graph structure using Nest.js events and Agenda job scheduler.
+        ● Designed the architecture for email deliverability system ensuring high deliverability rates with SendGrid.
+        `,
+      article: "https://tapptitude.com/blog/nail-marketing-campaigns",
+    },
+    {
+      company: "Machinations",
+      startDate: "Oct 2022",
+      endDate: "Mar 2024",
+      title: "Senior Full Stack Developer",
+      description: `● Refactored the authorization system to use SAML and OAuth2 protocols improving security and enabling SSO for enterprise clients.
+        ● Migrated the community app from a wordpress implementation to a Nuxt.js app improving performance and user experience.
+        ● Implemented a tutorial system for the main app using Intro.js library to improve user onboarding and retention.
+        `,
+    },
+    {
+      company: "Win",
+      startDate: "Feb 2022",
+      endDate: "Sep 2022",
+      title: "React Native Developer",
+      description: `● I worked on features and implementation for a React-Native application that also had Native (Android and IOS) functionality and integration with Unity. I also learned to use and work with a GraphQL backend. Gained significant experience in the cryptocurrency sector.
+        `,
+    },
+    {
+      company: "Tapptitude",
+      startDate: "Jun 2019",
+      endDate: "Sep 2022",
+      title: "React Native Developer",
+      description: `● Transitioned from a junior developer to a seasoned professional, gaining deep expertise in both web and mobile development. Mastered native mobile applications Android and IOS and cross-platform solutions using React Native, while also working extensively on frontend development with Vue.js and React.js. Acquired and applied a wide range of tools and skills, implementing innovative features across multiple applications and contributing to their overall success.
+        `,
+    },
+    {
+      company: "Altran",
+      startDate: "Sep 2017",
+      endDate: "Jun 2019",
+      title: "React Native Developer",
+      description: `● Developing software for TWINSCAN machine 
+          Responsibilities:
+            Responsible with the design, implementation, testing and/or documentation
+            Software development, task estimations, writing of documentation and as a feature integrator to manage deliveries
+            Secure both software and product quality
+            Documentation on projects and code changes
+        `,
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 max-w-7xl">
+        <HeaderSection {...userInfo} />
+        <ExperienceSection experiences={experiences} />
       </main>
     </div>
   );
